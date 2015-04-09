@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Games | Solus Operating System Documentaiton</title>
+        <title>Installation | Solus Operating System Documentaiton</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../games/minecraft.html" />
+    <link rel="next" href="../prerequisites/README.html" />
     
     
-    <link rel="prev" href="../graphics_drivers/nvidia.html" />
+    <link rel="prev" href="../index.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="4" data-basepath=".." data-revision="1428555697816">
+    <div class="book"  data-level="1" data-basepath=".." data-revision="1428555697816">
     
 
 <div class="book-summary">
@@ -65,7 +65,7 @@
         </li>
     
         
-        <li class="chapter " data-level="1" data-path="installation/README.html">
+        <li class="chapter active" data-level="1" data-path="installation/README.html">
             
                 
                     <a href="../installation/README.html">
@@ -157,7 +157,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="4" data-path="games/README.html">
+        <li class="chapter " data-level="4" data-path="games/README.html">
             
                 
                     <a href="../games/README.html">
@@ -369,9 +369,44 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_2">
+                    <section class="normal" id="section-gitbook_8">
                     
-                        <h1 id="games">Games</h1>
+                        <h1 id="installation">Installation</h1>
+<h3 id="requirements">Requirements:</h3>
+<ul>
+<li>USB drive of 2GB or more</li>
+<li>Ability to boot via USB</li>
+<li>ISO file from <a href="https://solus-project.com/download/" target="_blank">https://solus-project.com/download/</a></li>
+</ul>
+<h4 id="windows-tools">Windows Tools:</h4>
+<p><strong>SUSE Image Writer</strong> - <a href="https://github.com/downloads/openSUSE/kiwi/ImageWriter.exe" target="_blank">https://github.com/downloads/openSUSE/kiwi/ImageWriter.exe</a>
+<strong>Rufus</strong> - <a href="https://rufus.akeo.ie/" target="_blank">https://rufus.akeo.ie/</a></p>
+<h4 id="linux">Linux:</h4>
+<p><strong>DD</strong>:</p>
+<ol>
+<li>Insert USB drive of 2GB or more.</li>
+<li>Open your terminal</li>
+<li>Type:<pre><code>lsblk
+</code></pre>You will get output similar to this:<pre><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+fd0      2:0    1     4K  0 disk
+sda      8:0    0 111.8G  0 disk
+├─sda1   8:1    0   100M  0 part
+├─sda2   8:2    0  50.1G  0 part
+├─sda3   8:3    0  30.9G  0 part
+├─sda4   8:4    0     1K  0 part
+└─sda5   8:5    0  30.8G  0 part /
+sde      8:64   1   7.5G  0 disk
+└─sde1   8:65   1   754M  0 part
+</code></pre></li>
+<li>You will see one disk, in my case &quot;sde&quot; that is roughly the size of your USB Drive, note this down.</li>
+<li>Locate the downloaded ISO e.g cd ~/Downloads</li>
+<li><strong>Dangerous Step</strong>
+This is where we <strong>OVER-WRITE</strong> the contents of your USB drive so please ensure you identified the CORRECT drive in lsblk above.
+My command would be below, however you will need to replace sde with the drive we located above<pre><code>sudo dd if=Solus-Beta1.1.iso of=/dev/sde bs=1M;sync`
+</code></pre>This will write the contents of the ISO to the thumb drive so you can boot it and also make sure the data is synchronised so you can eject the USB safely.</li>
+<li>Reboot and select your USB Drive in your PC&#39;s boot menu (usually a function key like F10).</li>
+<li>Enjoy!</li>
+</ol>
 
                     
                     </section>
@@ -382,10 +417,10 @@
         </div>
 
         
-        <a href="../graphics_drivers/nvidia.html" class="navigation navigation-prev " aria-label="Previous page: NVIDIA"><i class="fa fa-angle-left"></i></a>
+        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Preface"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../games/minecraft.html" class="navigation navigation-next " aria-label="Next page: Minecraft"><i class="fa fa-angle-right"></i></a>
+        <a href="../prerequisites/README.html" class="navigation navigation-next " aria-label="Next page: Package Building"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

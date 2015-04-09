@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Games | Solus Operating System Documentaiton</title>
+        <title>Solus as Guest | Solus Operating System Documentaiton</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../games/minecraft.html" />
+    <link rel="next" href="../virtualbox/solus_as_host.html" />
     
     
-    <link rel="prev" href="../graphics_drivers/nvidia.html" />
+    <link rel="prev" href="../virtualbox/README.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="4" data-basepath=".." data-revision="1428555697816">
+    <div class="book"  data-level="6.1" data-basepath=".." data-revision="1428555697816">
     
 
 <div class="book-summary">
@@ -157,7 +157,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="4" data-path="games/README.html">
+        <li class="chapter " data-level="4" data-path="games/README.html">
             
                 
                     <a href="../games/README.html">
@@ -228,7 +228,7 @@
                 
     
         
-        <li class="chapter " data-level="6.1" data-path="virtualbox/solus_as_guest.html">
+        <li class="chapter active" data-level="6.1" data-path="virtualbox/solus_as_guest.html">
             
                 
                     <a href="../virtualbox/solus_as_guest.html">
@@ -369,10 +369,16 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_2">
+                    <section class="normal" id="section-gitbook_13">
                     
-                        <h1 id="games">Games</h1>
-
+                        <h1 id="solus-as-guest">Solus as Guest</h1>
+<p>Mount the Guest Additions ISO from VirtualBox&#39;s menu. Then in the guest machine do the following:</p>
+<pre><code>sudo mkdir -p /mnt/cdrom
+sudo mount -t iso9660 -o ro /dev/cdrom /mnt/cdrom
+cd /mnt/cdrom
+sudo sh VBoxLinuxAdditions.run
+sudo reboot
+</code></pre>
                     
                     </section>
                 
@@ -382,10 +388,10 @@
         </div>
 
         
-        <a href="../graphics_drivers/nvidia.html" class="navigation navigation-prev " aria-label="Previous page: NVIDIA"><i class="fa fa-angle-left"></i></a>
+        <a href="../virtualbox/README.html" class="navigation navigation-prev " aria-label="Previous page: VirtualBox"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../games/minecraft.html" class="navigation navigation-next " aria-label="Next page: Minecraft"><i class="fa fa-angle-right"></i></a>
+        <a href="../virtualbox/solus_as_host.html" class="navigation navigation-next " aria-label="Next page: Solus as Host"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

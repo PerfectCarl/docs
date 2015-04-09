@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Games | Solus Operating System Documentaiton</title>
+        <title>Solus as Host | Solus Operating System Documentaiton</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../games/minecraft.html" />
+    <link rel="next" href="../links/README.html" />
     
     
-    <link rel="prev" href="../graphics_drivers/nvidia.html" />
+    <link rel="prev" href="../virtualbox/solus_as_guest.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="4" data-basepath=".." data-revision="1428555697816">
+    <div class="book"  data-level="6.2" data-basepath=".." data-revision="1428555697816">
     
 
 <div class="book-summary">
@@ -157,7 +157,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="4" data-path="games/README.html">
+        <li class="chapter " data-level="4" data-path="games/README.html">
             
                 
                     <a href="../games/README.html">
@@ -244,7 +244,7 @@
         </li>
     
         
-        <li class="chapter " data-level="6.2" data-path="virtualbox/solus_as_host.html">
+        <li class="chapter active" data-level="6.2" data-path="virtualbox/solus_as_host.html">
             
                 
                     <a href="../virtualbox/solus_as_host.html">
@@ -369,10 +369,21 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_2">
+                    <section class="normal" id="section-gitbook_14">
                     
-                        <h1 id="games">Games</h1>
-
+                        <h1 id="solus-as-host">Solus as Host</h1>
+<p>Download the latest VirtualBox Installer from here:</p>
+<pre><code>https://www.virtualbox.org/wiki/Linux_Downloads
+</code></pre><p>Now install the dependencies and VirtualBox like so:</p>
+<pre><code>sudo eopkg it -c system.devel
+sudo eopkg it kernel-headers
+sudo ./VirtualBox-4.3.26-98988-Linux_amd64.run
+sudo /etc/init.d/vboxdrv setup
+</code></pre><p>Replace version number of file with the one you download.</p>
+<p><strong>Note:</strong>
+You will need to run this command after each reboot of your host machine or VMs will not start:</p>
+<pre><code>sudo /etc/init.d/vboxdrv setup
+</code></pre>
                     
                     </section>
                 
@@ -382,10 +393,10 @@
         </div>
 
         
-        <a href="../graphics_drivers/nvidia.html" class="navigation navigation-prev " aria-label="Previous page: NVIDIA"><i class="fa fa-angle-left"></i></a>
+        <a href="../virtualbox/solus_as_guest.html" class="navigation navigation-prev " aria-label="Previous page: Solus as Guest"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../games/minecraft.html" class="navigation navigation-next " aria-label="Next page: Minecraft"><i class="fa fa-angle-right"></i></a>
+        <a href="../links/README.html" class="navigation navigation-next " aria-label="Next page: Links"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
