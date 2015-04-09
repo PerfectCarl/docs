@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Package Building | Solus Operating System Documentaiton</title>
+        <title>Budgie on other Operating Systems | Solus Operating System Documentaiton</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../prerequisites/evobuild.html" />
+    <link rel="next" href="../links/README.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../games/minecraft.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="1" data-basepath=".." data-revision="1428553392053">
+    <div class="book"  data-level="4" data-basepath=".." data-revision="1428553392053">
     
 
 <div class="book-summary">
@@ -65,7 +65,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="prerequisites/README.html">
+        <li class="chapter " data-level="1" data-path="prerequisites/README.html">
             
                 
                     <a href="../prerequisites/README.html">
@@ -179,7 +179,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4" data-path="budgie_on_other_operating_systems/README.html">
+        <li class="chapter active" data-level="4" data-path="budgie_on_other_operating_systems/README.html">
             
                 
                     <a href="../budgie_on_other_operating_systems/README.html">
@@ -299,38 +299,41 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_9">
+                    <section class="normal" id="section-gitbook_3">
                     
-                        <h1 id="packaging-documentation">Packaging documentation</h1>
-<h3 id="preface">Preface</h3>
-<p>This documentation serves as a guide for those wishing to contribute to the Solus Project. Notablly it revolves around the topic of packaging.</p>
-<h3 id="expectations">Expectations</h3>
-<p>It is assumed the user is experienced with the command line, and as such has at least a basic working knowledge of Linux or Unix-like systems.</p>
-<h1 id="prerequisites">Prerequisites</h1>
-<p>To build packages for the Solus Operating System, you must first ensure your system is ready to do so.</p>
-<h3 id="build-types">Build Types</h3>
-<p>Builds can be separated into two distinct categories, local native builds, or chroot builds. For local packaging needs it may be sufficient to use the build system directly, however it is recommeneded to use <strong>evobuild</strong> to build your packages in a clean chroot environment.</p>
-<h3 id="native-solus-operating-system-builds">Native Solus Operating System builds</h3>
-<p>To perform local native builds on Solus will require you to install many build dependencies, which may be undesirable if you do not routinely use these packages, for example for development work.</p>
-<p>To enable this, at minimum you will be required to install the <strong>system.devel</strong> component:</p>
-<pre><code>sudo eopkg it -c system.devel
-</code></pre><h3 id="chroot-builds-including-foreign-distributions">Chroot builds, including foreign distributions</h3>
-<p>We provide the <strong>evobuild</strong> tool to enable clean chroot builds of Solus packages, which enables clean and controlled build of our packages not only on the Solus operating system, but on other Linux distributions too.</p>
-<h4 id="requirements">Requirements</h4>
+                        <h1 id="budgie-on-other-operating-systems">Budgie on other Operating Systems</h1>
+<h4 id="ubuntu-1504">Ubuntu 15.04</h4>
 <ul>
-<li>Modern kernel, with <strong>overlayfs</strong> enabled</li>
-<li>Root privileges (via sudo)</li>
-<li>A lot of disk space.
-*</li>
+<li>Ubuntu isn&#39;t officially supported so your results may vary</li>
+<li>This was done from Ubuntu Gnome 15.04 ISO</li>
+<li>Please ensure you have universe enabled in your sources list for mutter.</li>
+<li>This only works on Ubuntu 15.04 as it&#39;s the only one that has a new enough mutter.</li>
+<li>It could be possible to compile mutter on older Ubuntu versions.</li>
+<li>Install a theme other than Adwaita etc. Maybe even EvoPop <a href="https://github.com/poltertec/evopop-gtk-theme" target="_blank">https://github.com/poltertec/evopop-gtk-theme</a></li>
 </ul>
-<h4 id="installation-of-evobuild">Installation of evobuild</h4>
-<p>Solus installations are already equipped with evobuild, thus no steps are required here.
-Users of foreign distributions will need to install evobuild as follows:</p>
-<pre><code>wget https://raw.githubusercontent.com/solus-project/repository/master/system/base/pisi/files/evobuild.py
-sudo mv evobuild.py /usr/local/bin/evobuild &amp;&amp; sudo chmod +x /usr/local/bin/evobuild
-</code></pre><p>The pythonic build system also requires pyyaml to operate.</p>
-<h3 id="configuring-evobuild">Configuring evobuild</h3>
-<p>Please proceed to the next section to see how to use evobuild.</p>
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get dist-upgrade
+sudo reboot
+sudo apt-get install build-essential python2 gnome-common gobject-introspection libglib2.0-dev libgtk-3-dev libpulse-dev libpulse-mainloop-glib0 libmutter-dev libwnck-3-dev libupower-glib-dev libgnome-menu-3-dev libc6-dev libpeas-dev libgee-dev libgee-0.8-dev valac git
+git clone https://github.com/evolve-os/budgie-desktop.git
+cd budgie-desktop
+./autogen.sh --prefix=/usr
+make;sudo make install
+</code></pre><h4 id="debian-8-jessie">Debian 8 (Jessie)</h4>
+<ul>
+<li>This assumes you already have A desktop environment installed and a login manager.</li>
+<li>From Debian Jessie netinst ISO:<pre><code>sudo apt-get update;sudo apt-get upgrade -y
+sudo apt-get install build-essential gnome-common gobject-introspection libglib2.0-dev libgtk-3-dev libpulse-dev libpulse-mainloop-glib0 libmutter-dev libwnck-3-dev libupower-glib-dev libgnome-menu-3-dev libc6-dev libpeas-dev libgee-dev libgee-0.8-dev valac git -y
+git clone https://github.com/evolve-os/budgie-desktop.git;cd budgie-desktop;./autogen.sh --prefix=/usr;make;sudo make install
+</code></pre>Now you should be able to select Budgie from your login manager e.g GDM/lightdm</li>
+</ul>
+<h4 id="arch">Arch</h4>
+<p>AUR packages</p>
+<p>Stable:</p>
+<pre><code>yaourt -S budgie-desktop
+</code></pre><p>Git:</p>
+<pre><code>yaourt -S budgie-desktop-git
+</code></pre><h4 id="fedora-20-21--opensuse">Fedora 20, 21 &amp; OpenSUSE</h4>
+<p><a href="http://software.opensuse.org/download.html?project=home%3Aikeydoherty%3Aevolve&amp;package=budgie-desktop" target="_blank">http://software.opensuse.org/download.html?project=home%3Aikeydoherty%3Aevolve&amp;package=budgie-desktop</a></p>
 
                     
                     </section>
@@ -341,10 +344,10 @@ sudo mv evobuild.py /usr/local/bin/evobuild &amp;&amp; sudo chmod +x /usr/local/
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Preface"><i class="fa fa-angle-left"></i></a>
+        <a href="../games/minecraft.html" class="navigation navigation-prev " aria-label="Previous page: Minecraft"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../prerequisites/evobuild.html" class="navigation navigation-next " aria-label="Next page: evobuild"><i class="fa fa-angle-right"></i></a>
+        <a href="../links/README.html" class="navigation navigation-next " aria-label="Next page: Links"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

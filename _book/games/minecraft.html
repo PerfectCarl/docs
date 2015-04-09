@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Package Building | Solus Operating System Documentaiton</title>
+        <title>Minecraft | Solus Operating System Documentaiton</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../prerequisites/evobuild.html" />
+    <link rel="next" href="../budgie_on_other_operating_systems/README.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../games/README.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="1" data-basepath=".." data-revision="1428553392053">
+    <div class="book"  data-level="3.1" data-basepath=".." data-revision="1428553392053">
     
 
 <div class="book-summary">
@@ -65,7 +65,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="prerequisites/README.html">
+        <li class="chapter " data-level="1" data-path="prerequisites/README.html">
             
                 
                     <a href="../prerequisites/README.html">
@@ -158,7 +158,7 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="games/minecraft.html">
+        <li class="chapter active" data-level="3.1" data-path="games/minecraft.html">
             
                 
                     <a href="../games/minecraft.html">
@@ -299,39 +299,26 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_9">
+                    <section class="normal" id="section-gitbook_5">
                     
-                        <h1 id="packaging-documentation">Packaging documentation</h1>
-<h3 id="preface">Preface</h3>
-<p>This documentation serves as a guide for those wishing to contribute to the Solus Project. Notablly it revolves around the topic of packaging.</p>
-<h3 id="expectations">Expectations</h3>
-<p>It is assumed the user is experienced with the command line, and as such has at least a basic working knowledge of Linux or Unix-like systems.</p>
-<h1 id="prerequisites">Prerequisites</h1>
-<p>To build packages for the Solus Operating System, you must first ensure your system is ready to do so.</p>
-<h3 id="build-types">Build Types</h3>
-<p>Builds can be separated into two distinct categories, local native builds, or chroot builds. For local packaging needs it may be sufficient to use the build system directly, however it is recommeneded to use <strong>evobuild</strong> to build your packages in a clean chroot environment.</p>
-<h3 id="native-solus-operating-system-builds">Native Solus Operating System builds</h3>
-<p>To perform local native builds on Solus will require you to install many build dependencies, which may be undesirable if you do not routinely use these packages, for example for development work.</p>
-<p>To enable this, at minimum you will be required to install the <strong>system.devel</strong> component:</p>
-<pre><code>sudo eopkg it -c system.devel
-</code></pre><h3 id="chroot-builds-including-foreign-distributions">Chroot builds, including foreign distributions</h3>
-<p>We provide the <strong>evobuild</strong> tool to enable clean chroot builds of Solus packages, which enables clean and controlled build of our packages not only on the Solus operating system, but on other Linux distributions too.</p>
-<h4 id="requirements">Requirements</h4>
-<ul>
-<li>Modern kernel, with <strong>overlayfs</strong> enabled</li>
-<li>Root privileges (via sudo)</li>
-<li>A lot of disk space.
-*</li>
-</ul>
-<h4 id="installation-of-evobuild">Installation of evobuild</h4>
-<p>Solus installations are already equipped with evobuild, thus no steps are required here.
-Users of foreign distributions will need to install evobuild as follows:</p>
-<pre><code>wget https://raw.githubusercontent.com/solus-project/repository/master/system/base/pisi/files/evobuild.py
-sudo mv evobuild.py /usr/local/bin/evobuild &amp;&amp; sudo chmod +x /usr/local/bin/evobuild
-</code></pre><p>The pythonic build system also requires pyyaml to operate.</p>
-<h3 id="configuring-evobuild">Configuring evobuild</h3>
-<p>Please proceed to the next section to see how to use evobuild.</p>
-
+                        <h1 id="minecraft">Minecraft</h1>
+<p>How to install Minecraft on Solus.</p>
+<p>Grab the Java Run-time Environment here:</p>
+<pre><code>http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+</code></pre><p>Extract JRE and move it to /opt:</p>
+<pre><code>cd ~/Downloads
+tar xf jre-8u40-linux-x64.tar.gz
+sudo mv jre1.8.0_40 /opt/
+sudo ln -s /opt/jre1.8.0_40/bin/java /usr/bin/java
+</code></pre><p>Grab the Minecraft files and menu entry:</p>
+<pre><code>sudo mkdir /opt/Minecraft
+sudo wget https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar -O /opt/Minecraft/Minecraft.jar
+sudo wget http://users.on.net/justin.zobel/minecraft -O /usr/bin/minecraft
+sudo chmod +x /usr/bin/minecraft
+sudo wget http://users.on.net/justin.zobel/minecraft.desktop -O /usr/share/applications/minecraft.desktop
+</code></pre><p>You know have a Minecraft Entry in Budgie Menu and you can run it from any terminal by typing:</p>
+<pre><code>minecraft
+</code></pre>
                     
                     </section>
                 
@@ -341,10 +328,10 @@ sudo mv evobuild.py /usr/local/bin/evobuild &amp;&amp; sudo chmod +x /usr/local/
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Preface"><i class="fa fa-angle-left"></i></a>
+        <a href="../games/README.html" class="navigation navigation-prev " aria-label="Previous page: Games"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../prerequisites/evobuild.html" class="navigation navigation-next " aria-label="Next page: evobuild"><i class="fa fa-angle-right"></i></a>
+        <a href="../budgie_on_other_operating_systems/README.html" class="navigation navigation-next " aria-label="Next page: Budgie on other Operating Systems"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
